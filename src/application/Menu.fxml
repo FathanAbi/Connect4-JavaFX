@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="menuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="360.0" style="-fx-background-color: SKYBLUE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
+   <children>
+      <Label layoutX="84.0" layoutY="41.0" prefHeight="70.0" prefWidth="192.0" text="Connect 4" wrapText="true">
+         <font>
+            <Font name="Comic Sans MS Bold" size="40.0" />
+         </font>
+      </Label>
+      <VBox layoutX="84.0" layoutY="189.0" spacing="40.0">
+         <children>
+            <Button fx:id="menuPlayButton" mnemonicParsing="false" onAction="#menuPlayButtonOnPressed" prefHeight="44.0" prefWidth="194.0" text="PLAY">
+               <font>
+                  <Font name="Verdana Bold" size="21.0" />
+               </font>
+            </Button>
+            <Button fx:id="menuExitButton" mnemonicParsing="false" onAction="#menuExitButtonOnPressed" prefHeight="41.0" prefWidth="197.0" text="EXIT">
+               <font>
+                  <Font name="Verdana Bold" size="21.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
