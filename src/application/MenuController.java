@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+
+// class controller untuk menu screen
 public class MenuController extends Main{
 	Stage menuStage;
     @FXML
@@ -17,18 +19,25 @@ public class MenuController extends Main{
     @FXML
     private AnchorPane menuPane;
 
+    
+    // exit button, exit menu screen
     @FXML
     void menuExitButtonOnPressed(ActionEvent event) {
-    	System.out.println("Exited");
+    	menuStage = (Stage) menuPane.getScene().getWindow();
+    	menuStage.close();
+    }
+    
+    
+    // play button, masuk ke game screen
+    @FXML
+    void menuPlayButtonOnPressed(ActionEvent event) {
+    	// close menu screen
     	menuStage = (Stage) menuPane.getScene().getWindow();
     	menuStage.close();
     	
-    	
-    }
-
-    @FXML
-    void menuPlayButtonOnPressed(ActionEvent event) {
-    	System.out.println("played");
+    	// buka dan launch game
+    	Game game = new Game();
+    	game.createGame();
     	
     }
 
