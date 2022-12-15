@@ -142,6 +142,10 @@ public class Game{
         if (row < 0)
             return;
         
+        
+        // switch pemain
+        redMove = !redMove;
+        
         // track disc
         grid[column][row] = disc;
         discRoot.getChildren().add(disc);
@@ -166,8 +170,8 @@ public class Game{
 				}
             }
             
-            // switch pemain
-            redMove = !redMove;
+            
+            
         });
         animation.play();
 	}
