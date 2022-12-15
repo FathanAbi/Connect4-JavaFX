@@ -128,6 +128,7 @@ public class Game{
 	
 	// method untuk menempatkan disc
 	private void placeDisc(Disc disc, int column) {
+		
 		int row = ROWS - 1;
 		
 		// looping untuk mencari posisi row untuk menempatkan disc
@@ -142,9 +143,10 @@ public class Game{
         if (row < 0)
             return;
         
+     
         
-        // switch pemain
-        redMove = !redMove;
+        
+        
         
         // track disc
         grid[column][row] = disc;
@@ -158,9 +160,12 @@ public class Game{
         TranslateTransition animation = new TranslateTransition(Duration.seconds(0.5), disc);
         animation.setToY(row * (TILE_SIZE + 5) + TILE_SIZE / 4);
         
+     
+        
         // cek apakah disc membentuk pattern dengan disc yang sudah ditempatkan sebelumnya
         animation.setOnFinished(e -> {
         	// gameover jika mebnetuk pattern
+        	 
             if (gameEnded(column, curentRow)) {
                 try {
 					gameOver();
@@ -170,7 +175,9 @@ public class Game{
 				}
             }
             
-            
+         // switch pemain
+            redMove = !redMove;
+        
             
         });
         animation.play();
