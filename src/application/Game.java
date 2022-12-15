@@ -1,5 +1,6 @@
 package application;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -157,7 +158,12 @@ public class Game{
         animation.setOnFinished(e -> {
         	// gameover jika mebnetuk pattern
             if (gameEnded(column, curentRow)) {
-                gameOver();
+                try {
+					gameOver();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
             }
             
             // switch pemain
@@ -230,7 +236,16 @@ public class Game{
 	}
 	
 	// tampilkan pemenang
-	private void gameOver() {
-		System.out.println("Winner: " + (redMove ? "Red" : "Yellow"));
+	private void gameOver() throws IOException {
+		
+		// close game
+		gameStage.close();
+		
+		// launch win screem
+		WinScreen.setWinner((redMove ? "Red" : "Yellow"));
+		WinScreen win = new WinScreen();
+		win.createWinScreen();
+		
+		
 	}
 }
