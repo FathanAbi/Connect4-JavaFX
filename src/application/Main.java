@@ -16,7 +16,7 @@ public class Main extends Application {
 			
 			// scene dan root node
 			Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-			Scene menuScene = new Scene(root);
+			Scene menuScene = new Scene(root);  
 			
 			// set window
 			Stage.setScene(menuScene);
